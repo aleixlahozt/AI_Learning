@@ -1,107 +1,3 @@
-# AI Training
-
-* QA LLM
-* Automated evaluation
-* Fine-tunning
-* Graph RAG: **[https://www.youtube.com/watch?v=r09tJfON6kE](https://www.youtube.com/watch?v=r09tJfON6kE)**
-
-## QA LLM
-
-QA of LLM, or Quality Assurance of Large Language Models, refers to the process of evaluating and ensuring the quality, reliability, and performance of large language models like GPT, BERT, or other transformer-based models. As an AI engineer, understanding QA for LLMs involves several key aspects:
-
-### Key Components of QA for LLMs:
-
-1. **Evaluation of Model Performance**:
-
-   - **Accuracy and Precision**: Assessing how well the model understands and generates relevant and correct responses.
-   - **Benchmarking**: Using standardized datasets and metrics to compare the model's performance against other models or previous versions.
-2. **Bias and Fairness**:
-
-   - **Bias Detection**: Identifying and mitigating biases in the model’s outputs that can stem from imbalanced training data.
-   - **Fairness Evaluation**: Ensuring that the model's responses are fair and non-discriminatory across different groups and scenarios.
-3. **Robustness Testing**:
-
-   - **Adversarial Testing**: Checking how the model handles edge cases, adversarial inputs, or unexpected queries.
-   - **Resilience to Noise**: Testing the model’s ability to handle noisy or ambiguous input data without significant degradation in performance.
-4. **Safety and Ethical Considerations**:
-
-   - **Content Safety**: Ensuring the model does not generate harmful, offensive, or inappropriate content.
-   - **Compliance**: Verifying that the model adheres to regulatory and ethical guidelines for AI use.
-5. **Operational Aspects**:
-
-   - **Latency and Scalability**: Measuring how quickly the model responds and how well it scales with increased load.
-   - **Resource Utilization**: Evaluating the computational efficiency of the model.
-6. **User Feedback and Iterative Improvement**:
-
-   - **Feedback Loops**: Incorporating user feedback to continuously improve model performance.
-   - **A/B Testing**: Running different versions of the model in parallel to determine which performs better in real-world scenarios.
-
-### Tools and Techniques:
-
-- **Automated Testing Frameworks**: Tools like Hugging Face’s `transformers` library, or custom scripts to automate the testing process.
-- **Manual Evaluation**: Involving human reviewers to assess the model’s output quality in complex scenarios.
-- **Performance Metrics**: Metrics such as BLEU, ROUGE, or custom metrics tailored to the specific use case of the LLM.
-
-### Importance:
-
-QA for LLMs is crucial for deploying AI systems that are reliable, trustworthy, and aligned with user expectations. By systematically assessing the quality of LLMs, you can ensure they deliver accurate, unbiased, and safe outputs, enhancing their utility in various applications such as chatbots, content generation, and more.
-
-As you delve deeper into QA for LLMs, focus on understanding the specific metrics and tools relevant to your projects, and consider setting up a robust evaluation pipeline to regularly test and improve your models.
-
-## LLM [Evaluation Metrics](https://www.confident-ai.com/blog/llm-evaluation-metrics-everything-you-need-for-llm-evaluation)
-
-![](https://cdn.prod.website-files.com/64bd90bdba579d6cce245aec/66d400d68fa4a872b554ead4_66681237ee3fb1317a1838a7_llm%2520evaluation%2520metric.png)
-
-Most important common metrics:
-
-* **Answer Relevancy:** Determines whether an LLM output is able to address the given input in an informative and concise manner.
-* **Correctness:** Determines whether an LLM output is factually correct based on some ground truth.
-* **Hallucination:** Determines whether an LLM output contains fake or made-up information.
-* **Contextual Relevancy:** Determines whether the retriever in a RAG-based LLM system is able to extract the most relevant information for your LLM as context.
-* **Responsible Metrics:** Includes metrics such as bias and toxicity, which determines whether an LLM output contains (generally) harmful and offensive content.
-* **Task-Specific Metrics:** Includes metrics such as summarization, which usually contains a custom criteria depending on the use-case.
-
-#### Different Ways to Compute Metric Scores
-
-![](https://cdn.prod.website-files.com/64bd90bdba579d6cce245aec/66d400d78fa4a872b554eaec_65ae30bca9335d1c73650df0_metricsven.png)
-
-#### G-Eval
-
-G-Eval is a recently developed framework from a [paper](https://arxiv.org/pdf/2303.16634.pdf) titled **“NLG Evaluation using GPT-4 with Better Human Alignment”** that **uses LLMs to evaluate LLM outputs (aka. LLM-Evals), and is one the best ways to create task-specific metrics.**
-
-#### **SelfCheckGPT:** For hallucinations evalaution
-
-SelfCheckGPT is an odd one. [It is a simple sampling-based approach that is used to fact-check LLM outputs.](https://arxiv.org/pdf/2303.08896.pdf) It assumes that  hallucinated outputs are not reproducible, whereas if an LLM has knowledge of a given concept, sampled responses are likely to be similar and contain consistent facts.
-
-SelfCheckGPT is an interesting approach because it makes detecting hallucination a reference-less process, which is extremely useful in a production setting.
-
-![](https://cdn.prod.website-files.com/64bd90bdba579d6cce245aec/66d400d8b269fd66427b7f05_65ae0a6ef4f934569e0a2321_Screenshot%25202024-01-20%2520at%25203.17.26%2520PM.png)
-
-## DeepEval: The LLM Evaluation Framework
-
-* Link [here](https://github.com/confident-ai/deepeval)
-
-**DeepEval** is a simple-to-use, open-source LLM evaluation framework. It is similar to Pytest but specialized for unit testing LLM outputs. DeepEval incorporates the latest research to evaluate LLM outputs based on metrics such as G-Eval, hallucination, answer relevancy, RAGAS, etc., which uses LLMs and various other NLP models that runs **locally on your machine** for evaluation.
-
-Whether your application is implemented via RAG or fine-tuning, LangChain or LlamaIndex, DeepEval has you covered. With it, you can easily determine the optimal hyperparameters to improve your RAG pipeline, prevent prompt drifting, or even transition from OpenAI to hosting your own Llama2 with confidence.
-
-## Top Ranked Evaluation Frameworks
-
-Interesting article to read: [here](https://www.superannotate.com/blog/llm-evaluation-guide#what-is-llm-evaluation)
-
-![llm evaluation frameworks and tools](https://cdn.prod.website-files.com/614c82ed388d53640613982e/66b48089bc8d002329ccf57c_66b480659d818a70446aea0a_llm-frameworks-and-tools.webp)
-
-## Interesting Links:
-
-* AI Show: On Demand | LLM Evaluations in Azure AI Studio: [link](https://www.youtube.com/watch?v=VOQT0LAloNg)
-* Azure AI Studio: Evaluation of generative AI applications:
-  * [link](https://learn.microsoft.com/en-gb/azure/ai-studio/concepts/evaluation-approach-gen-ai) 1
-  * [link 2](https://learn.microsoft.com/en-gb/azure/ai-studio/how-to/evaluate-generative-ai-app?pivots=ai-studio)
-  * [link 3](https://azure.microsoft.com/en-us/blog/infuse-responsible-ai-tools-and-practices-in-your-llmops/)
-* GraphRAG: The Marriage of Knowledge Graphs and RAG: Emil Eifrem: [link](https://www.youtube.com/watch?v=knDDGYHnnSI)
-* GraphRAG: Unlocking LLM discovery on narrative private data: [link](https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/)
-* End-to-End Implementation of GraphRAG(Knowledge Graphs + Retrieval Augmented Generation): [link](https://medium.com/@vinodkumargr/graphrag-graphs-retreival-augmented-generation-unlocking-llm-discovery-on-narrative-private-1bf977dadcdd)
-
 # LLM Fine-tuning
 
 **Topics:**
@@ -167,11 +63,71 @@ A: {Answer} """
    2. Augment the model with additional parameters which are trainable
    3. **Use LoRA (Low-Rank Adaptation)**
 
-### LoRA (Low-Rank Adaptation)
+## LoRA (Low-Rank Adaptation)
 
-* Fine-tunes the model by adding new trainable parameters
+> Fine-tunes the model by adding new trainable parameters
+
+**Links:**
+
+* LoRA & QLoRA Fine-tuning [Explained In-Depth](https://www.youtube.com/watch?v=t1caDsMzWBk)
+* Low-rank Adaption of Large Language Models: E[xplaining the Key Concepts Behind LoRA](https://www.youtube.com/watch?v=dA-NhCtrrVE)
+
+**Key Concepts:**
+
+* **How is LoRA different?**
+
+  * Instead of updating weights directly, **we track changes**
+  * These weight changes are tracked in **two spearate, smaller matrices** that get multiplied together to form a matrix the same size as the model's weight matrix
+  * We sacrifice **some precision** in the final matrix at exchange of huge optimization (cost saving)
+* We can decide the **RANK** we are using to fine tune if LoRA (rank 1, 2, 8, 16...)
+
+  * The higher the rank, the higher the precision, the higher the amount of parameters we need to train
+* With LoRA, we are still training ALL the model parameters, but by just working with a smaller subset of them
+* **Does Rank Really Matter?**
+
+  * The theory is that downstream tasks are intrinsically low-rank
+
+The original pre-trained weights are kept frozen, which means you can have multiple lightweight and portable LoRA models for various downstream tasks built on top of them.
+
+![1726484200248](image/README/1726484200248.png)
 
 ![1726477471504](image/README/1726477471504.png)
+
+### Core Idea behind LoRA
+
+In standard fine-tuning of LLMs, the full weight matrices of the model are updated to fit a downstream task. LoRA takes a different approach by **assuming that the weight updates during fine-tuning lie in a "low-rank" space**, which means the changes required to adapt the model to a new task can be approximated by a low-rank matrix.
+
+#### Decomposition of Weight Updates
+
+LoRA introduces two trainable low-rank matrices \( A \) and \( B \), which are much smaller than the original weight matrix \( W \). Instead of fine-tuning \( W \) directly, LoRA approximates the weight update using these low-rank matrices:
+
+![1726485812003](image/README/1726485812003.png)
+
+The idea is that instead of directly updating \( W \), you update the product of the much smaller matrices \( A \) and \( B \). This reduces the number of trainable parameters from `d x d` to `2 x d x r` which is significantly smaller when \( r \) (the rank) is much less than \( d \).
+
+### Why is LoRA Less Precise?
+
+LoRA introduces a **low-rank constraint** on the weight updates. When the rank is small (e.g., 1), it limits the complexity of the updates because the matrix product \(B A\) cannot fully capture all the variability that might be necessary to optimally adapt the model to the data.
+
+In the above example:
+
+- With **regular fine-tuning**, each element of the matrix was independently adjusted, which allows for maximum precision and flexibility.
+- With **LoRA**, the updates are structured and restricted by the rank, which results in a simpler, more constrained update. While this can still adapt the model, it may miss out on the fine details that a full update would capture, especially in complex, high-dimensional tasks.
+
+### How LoRA works in Fine-tuning
+
+1.**Freeze Pre-Trained Weights**: In LoRA, the original weight matrix \( W \) in the model remains frozen, i.e., it is not updated during fine-tuning. **Only the newly introduced low-rank matrices \( A \) and \( B \) are updated.**
+
+2.**Inject LoRA into Specific Layers**: LoRA is usually applied to the weight matrices in specific layers, typically the `self-attention layers of transformers`. These layers are computationally expensive, and most of the learning happens here, making them a prime target for optimization.
+
+3.**Adaptation Through Low-Rank Updates**: Instead of updating the full weight matrix, the change in weights is `approximated` by updating the product \( A · B), which is much smaller in size. This keeps the memory footprint small while still allowing the model to adapt to new tasks.
+
+4.**During Inference**: Once the model is fine-tuned with LoRA, the low-rank matrices \( A \) and \( B \) are used to compute the adapted weights by adding \( Delta W = A · B \) to the original weight matrix \( W \).
+
+### Practical example:
+
+> * Check this [guide](https://huggingface.co/docs/peft/main/en/conceptual_guides/lora) from HuggingFace
+> * Lora [methods](https://huggingface.co/docs/peft/main/en/task_guides/lora_based_methods) from HuggingFace
 
 1. Create dataset (1000 data points may be enough)
 2. Preprocess data
@@ -186,6 +142,54 @@ A: {Answer} """
 5. Define hyperparameters (lr, batch_size, epochs) and training arguments
 
 ![1726478574669](image/README/1726478574669.png)
+
+## [QLoRA](https://arxiv.org/abs/2305.14314): Quanzited LoRA
+
+> QLoRA backpropagates gradients through a frozen, 4-bit quantized pretrained language model into Low Rank Adapters~(LoRA).
+
+* Basically LoRA 2.0
+* Uses even less memory with "recoverable" quantization
+* Paper has other critical findings:
+  * Training all layers of the network is necessary to match performance of full-parameter fine tunning
+  * Rank may not matter in the range 8 to 256 (i.e. it does not affect performance)
+  * The most critical LoRA hyperparameter is `how many LoRA adapters are used in total = how many layers of the network we are training`
+
+#### Core Concepts of QLoRA
+
+Altough LoRA manages to train LLMs by reducing the number of trainable parameters, the **model's forward passs still consumes a lof of memory.**
+
+1. **Quantization**: Quantization is a technique where the precision of the model weights is reduced to lower bit-widths, typically from 16-bit (FP16) or 32-bit (FP32) to **4-bit** integers (INT4). This drastically reduces memory usage and computational overhead.
+2. **Low-Rank Adaptation (LoRA)**: Just like LoRA, QLoRA injects small low-rank matrices into the model to perform updates. The frozen quantized weights (from the 4-bit model) are combined with these low-rank matrices for the fine-tuning process.
+
+**In QLoRA:**
+
+- The **base model is quantized** to 4-bit precision for storage and computation efficiency.
+- **Only the low-rank adaptation matrices (LoRA matrices) are updated** during training, while the original model weights stay fixed in their quantized form.
+
+#### Workflow of QLoRA
+
+1. **Quantizing the Model**: Before fine-tuning, the pre-trained LLM is quantized to 4-bit precision, reducing memory usage dramatically. This enables the fine-tuning of much larger models on consumer-grade GPUs.
+2. **LoRA Fine-Tuning**: After quantization, QLoRA injects low-rank matrices into the model, similar to the standard LoRA approach. The frozen quantized weights are supplemented by these trainable matrices, which are small in size, making the training process more efficient.
+3. **Training**: During training, only the LoRA matrices are updated, while the 4-bit quantized weights remain fixed. This significantly reduces the number of parameters that need to be updated and the memory required for gradients.
+4. **Performance**: Despite the aggressive quantization, QLoRA achieves near full-precision performance because only a small number of parameters (the LoRA matrices) are trained with higher precision, and the quantized weights provide a good approximation of the original full-precision model.
+
+**LoRA & QLoRA Hyperparameters**
+
+* `Alpha` determiness the multiplier applied to the weight changes when added to the original weights
+  * Scale multiplier = Alpha / Rank
+  * Microsoft LoRA repository sets to 2xRank
+  * QLoRA went with 1/4 of Rank (alpha = 16, rank = 64) --> kind of surprising
+* `Dropout` is a percentage that randomly leaves out some weight changes each time to prevent overfitting (e.g. 0.1 or 0.05)
+* Also other typical ones: `LR`, `batch_size`, ...
+
+#### Example of QLoRA in Practice
+
+Let’s take an example where you want to fine-tune a large pre-trained model like LLaMA 65B for a specific NLP task, such as sentiment classification:
+
+1. **Quantization**: First, the entire LLaMA 65B model is quantized to 4-bit precision, significantly reducing its memory footprint (e.g., from over 300GB to around 60GB).
+2. **LoRA Injection**: You inject LoRA matrices into specific layers of the model, like the self-attention and feed-forward layers. These matrices are small in size compared to the full model weights.
+3. **Fine-Tuning**: You then fine-tune only the LoRA matrices on your specific task. The quantized base model remains frozen during this process, requiring less memory and compute resources.
+4. **Inference**: During inference, the model uses the frozen quantized weights along with the fine-tuned LoRA matrices to make predictions, achieving near full-precision accuracy while being very efficient in terms of resource usage.
 
 ## Instruct Fine-Tuning (IFT)
 
