@@ -81,6 +81,7 @@
 * [Audio summary](https://illuminate.google.com/home?pli=1&play=SKUdNc_PPLL8) of "Attention Is All You Need"
 * Transformers explained: [video](https://www.youtube.com/watch?v=SZorAJ4I-sA)
 * Transformers python library: [here](https://pypi.org/project/transformers/)
+* Python notebook: [here](DeepLearning/11_lab_transformer_todo.ipynb)
 
 #### Word and Text embeddings
 
@@ -89,6 +90,7 @@
 
 #### LLM Tokenizers
 
+* What are ChatGPT tokens? [link](https://www.youtube.com/watch?v=YM3dbgKnQgA)
 * **VIDEO:** [Explanation](https://www.youtube.com/watch?v=hL4ZnAWSyuU)
 
 #### RAG (Retrieval Augmented Generation)
