@@ -82,7 +82,23 @@
 * Transformers explained: [video](https://www.youtube.com/watch?v=SZorAJ4I-sA)
 * Transformers python library: [here](https://pypi.org/project/transformers/)
 
+#### Word and Text embeddings
+
+* **VIDEO:** Word Embeddings, word2vec: [link](https://www.youtube.com/watch?v=R3xHRSMCG5g)
+* **VIDEO:** Text embeddings [explanation](https://www.youtube.com/watch?v=OATCgQtNX2o)
+
+#### LLM Tokenizers
+
+* **VIDEO:** [Explanation](https://www.youtube.com/watch?v=hL4ZnAWSyuU)
+
 #### RAG (Retrieval Augmented Generation)
+
+**What is semantic / similarity search?**
+
+* Article explanation: [link](https://medium.com/@sudhiryelikar/understanding-similarity-or-semantic-search-and-vector-databases-5f9a5ba98acb)
+* What is semantic search? [link](https://cohere.com/llmu/what-is-semantic-search)
+
+**Why RAG?**
 
 * [Documentation](https://python.langchain.com/v0.2/docs/tutorials/rag/) from Langchain
 * [Video](https://www.youtube.com/watch?v=Q7CSm-Gl0RA) explanation
