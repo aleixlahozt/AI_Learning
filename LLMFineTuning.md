@@ -258,3 +258,137 @@ Once you’re satisfied with the quality and distribution of the examples, you c
 * Observing the quality gap between the two
 
 In general, if you have to make a trade-off, a smaller amount of high-quality data is generally more effective than a larger amount of low-quality data.
+
+## Multilingual IFT (Instruction Fine Tuning)
+
+#### Zero-shot cross-lingual knowledge transfer in generative tasks: [paper](https://www.aimodels.fyi/papers/arxiv/key-ingredients-effective-zero-shot-cross-lingual)
+
+The paper **"Key Ingredients for Effective Zero-Shot Cross-Lingual Knowledge Transfer in Generative Tasks"** explores how to adapt multilingual pretrained language models (mPLMs) for zero-shot cross-lingual generation tasks, such as summarization and question answering (QA).
+
+**Key Points:**
+
+1. **Zero-Shot Cross-Lingual Transfer**:
+
+   - This approach enables a model trained on a task in one language (usually English) to perform the same task in a different, unseen language. While this has been extensively studied in natural language understanding (NLU), it's less explored for generative tasks like summarization or QA.
+2. **Problem of Wrong Language Generation**:
+
+   - A frequent issue in zero-shot cross-lingual generation is that models often generate outputs in the wrong language. Previous work has tried to address this with techniques like freezing model components, using parameter-efficient tuning, or mixing unsupervised data from the target language.
+3. **Backbone Models**:
+
+   - The authors compare three models: mT5, mBART, and NLLB-200, across two generative tasks (summarization and QA) to understand which is better suited for zero-shot transfer.
+4. **Key Findings**:
+
+   - **Learning Rate Tuning**: Carefully tuning the learning rate substantially reduces the issue of generating in the wrong language.
+   - **Full Fine-Tuning**: Simple full fine-tuning of the model provides a strong baseline, often outperforming more complex adaptation techniques.
+   - **Model Comparisons**: mBART and mT5 perform similarly, with mBART better suited for long text generation and mT5 for shorter outputs. NLLB-200, surprisingly, performs well for summarization but not as well for QA.
+   - **Intermediate Tuning**: Helps improve performance in many cases, particularly for mBART.
+5. **Adaptation Methods**:
+
+   - The authors evaluate six methods, including full fine-tuning, prompt tuning, and adapters, and conclude that full fine-tuning is a strong approach when hyperparameters are carefully chosen.
+6. **Performance Benchmarks**:
+
+   - Zero-shot models perform comparably to approaches based on data translation (where task data is translated into the target language), which is usually considered the upper bound for performance.
+
+In the paper, the authors tested their approach using two datasets:
+
+1. **XL-Sum** (for news summarization) across **44 languages**, with dataset sizes varying from 1K (Scottish Gaelic) to 300K (English) article-summary pairs. For evaluation, they cropped the test sets to 2K samples per language.
+2. **XQuAD** (for question answering), which contains translations of the SQuAD validation set into **11 languages**. The authors used a test set of around 1190 questions, filtering those whose answers contain numbers and ensuring that answers are in the target language.
+
+For XL-Sum, they evaluated summarization with the **ROUGE-2 metric**, and for XQuAD, they used the **F1-score**.
+
+Also, the paper discusses that **zero-shot transfer performance varies depending on the language**. Specifically:
+
+- For **summarization** (XL-Sum), the **performance varies significantly** across languages. High-resource, Latin-script languages like **French** and **Spanish** perform better, while languages like **Chinese** pose challenges, such as **empty predictions** from NLLB-200. This model was noted to have processing issues with Chinese.
+- In **question answering** (XQuAD), **NLLB-200** also struggled, producing **non-relevant answers** more frequently in certain languages. Latin-script, high-resource languages (e.g., **French**, **Spanish**) saw better performance with mT5 and mBART, but overall, **QA performance lagged** in low-resource languages.
+
+The paper highlights that performance can be linked to:
+
+- Language script (Latin vs. non-Latin).
+- Resource availability for the language.
+
+For example, **NLLB-200** performed **well for summarization in Latin-script languages**, but its results dropped in Chinese and other non-Latin scripts
+
+https://www.aimodels.fyi/papers/arxiv/sphinx-sample-efficient-multilingual-instruction-fine-tuning
+
+#### Zero-shot cross-lingual transfer in instruction tuning of large language models: [paper](https://www.aimodels.fyi/papers/arxiv/zero-shot-cross-lingual-transfer-instruction-tuning)
+
+The more recent paper introduces a systematic study of **zero-shot cross-lingual transfer in instruction tuning** of large language models (LLMs). Specifically, the key new aspects introduced in this paper compared to prior works include:
+
+1. **Zero-Shot Cross-Lingual Transfer for Instruction Tuning**:
+
+   - The focus is on instruction-tuning LLMs **only on English data** and testing their performance when prompted in other languages. This study evaluates the models’ ability to follow instructions in languages that were not part of the training data.
+2. **Evaluation of Different Aspects of Model Responses**:
+
+   - The paper emphasizes the importance of assessing various aspects of multilingual instruction-following, such as:
+     - **Language correctness** (whether the model responds in the correct language)
+     - **Helpfulness**
+     - **Fluency**
+     - **Factual accuracy**
+     - **Logical coherence**
+     - **Harmlessness**
+
+   The paper argues that high-level evaluations alone are insufficient, and a deeper breakdown of these facets is essential for open-ended generation tasks in multiple languages
+3. **Findings on Model Configuration and Data Size**:
+
+   - The paper explores the impact of model size, data size, adaptation strategies (like full fine-tuning vs. LoRA), and hyperparameter tuning on cross-lingual performance.
+   - It finds that **cross-lingual transfer works even when models are English-centric**, but multilinguality in tuning hyperparameters and using a large instruction-tuning dataset is crucial
+4. **Challenges with Non-English Factuality**:
+
+   - One of the main limitations is that factuality in non-English languages remains lower, although models can still produce fluent and helpful responses in other languages
+
+In contrast to prior research, this paper does a **deep dive into zero-shot cross-lingual instruction tuning**, focusing on how English-only training can impact performance across different languages and tasks without requiring additional language-specific training data.
+
+**Datasets:**
+
+The paper evaluates the **cross-lingual transfer** performance using two main datasets:
+
+1. **Dolly (Databricks, 2023)**:
+
+   - **English-only instruction dataset**: 15k crowdsourced instructions across 7 categories, including creative writing, open/close QA, classification, and information extraction.
+   - **Multilingual Dolly (Dolly-DT)**: This is an extended version of Dolly, automatically translated into **French, Portuguese**, and **Russian** using NLLB-3.3B.
+2. **LIMA (Zhou et al., 2023)**:
+
+   - A highly curated English dataset containing **1,000** instruction-response pairs selected from sources like StackExchange and WikiHow, designed for high-quality instruction tuning
+
+**Languages Tested:**
+
+- **English**
+- **French**
+- **Portuguese**
+- **Russian**
+
+Instructions from the datasets are translated into these languages using Google Translate and manually corrected by native or fluent speakers
+
+#### Quantifying Multilingual Performance of Large Language Models Across Languages: [paper](https://arxiv.org/pdf/2404.11553)
+
+The paper introduces the **Language Ranker**, a novel metric designed to measure the performance of Large Language Models (LLMs) in both high-resource and low-resource languages. The study addresses the performance disparity in LLMs, where models trained predominantly on high-resource languages (e.g., English, German) perform significantly worse on low-resource languages.
+
+**Key Contributions:**
+
+1. **Language Ranker Metric**:
+
+   - The authors propose an **intrinsic metric** based on the **cosine similarity** of internal representations between English and other languages. By comparing the representation of different languages against English, the Language Ranker assesses the model's multilingual capabilities.
+2. **Correlation with Training Data**:
+
+   - The paper shows that the **performance of LLMs** in various languages is **strongly correlated with the amount of training data** in those languages. High-resource languages with more representation in the training data exhibit better performance.
+3. **Embedding Space Analysis**:
+
+   - The study also analyzes the **embedding space** of LLMs and demonstrates that **high-resource languages** tend to be more evenly distributed, while **low-resource languages** are clustered, which impacts model performance.
+
+**Datasets Used:**
+
+The authors use the **OPUS-100** dataset, an English-centric multilingual corpus covering **100 languages**. After filtering, the authors evaluate **94 languages**, including both high-resource (e.g., German, French) and low-resource (e.g., Oriya, Kazakh, Kannada). Each language subset contains **2,000 samples**
+
+**Performance in Different Languages:**
+
+- The authors find that **high-resource languages**, such as **German, Spanish, and French**, show higher similarity scores to English, indicating better performance.
+- **Low-resource languages** like **Igbo, Kazakh, and Turkmen** show lower similarity scores, highlighting the challenges of cross-lingual performance in these languages
+
+#### Multilingual Instruction Tuning With Just a Pinch of Multilinguality: [paper](https://arxiv.org/pdf/2401.01854)
+
+- **Effect of Multilinguality in Instruction Tuning**: The study explores how adding multilingual examples during instruction tuning impacts instruction-following in different languages present in the model’s pre-training data.
+- **Monolingual Tuning Effect**: Monolingually tuned models can still transfer some instruction-following abilities to other languages.
+- **Small Multilingual Examples Help**: Including just **40 multilingual examples** in an English-tuned dataset can significantly enhance instruction-following in both seen and unseen languages during tuning.
+- **Efficiency of Multilingual Tuning**: Models trained on multilingual datasets perform comparably or even better across languages than monolingually tuned models, even when trained on **10x fewer examples** in those languages.
+- **Diversifying Training Languages**: Including just **2-4 languages** in the instruction tuning set improves cross-lingual generalization.
+- **Key Insight**: Building **massively multilingual instruction-tuned models** can be achieved using a **small set of multilingual instruction-response pairs**.
