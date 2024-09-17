@@ -4,16 +4,18 @@
 
 ## Machine Learning
 
-* [Course 1](https://www.coursera.org/learn/machine-learning/lecture/iYR2y/welcome-to-machine-learning): Introduction to Machnine Learning, from Standford
+* [Course 1](https://www.coursera.org/learn/machine-learning/lecture/iYR2y/welcome-to-machine-learning): Introduction to Machine Learning, from Standford
+* All ML algorithms explained: [here](https://scikit-learn.org/stable/supervised_learning.html)
 
 #### Summary
 
 - Key ML Algorithms:
   - Linear Regression
   - Logistic Regression
-  - Decision Trees, Random Forest
+  - Decision Trees: [video](https://www.youtube.com/watch?v=ZVR2Way4nwQ)
+  - Random Forest: [video](https://www.youtube.com/watch?v=v6VJ2RO66Ag&t=192s)
   - k-Nearest Neighbors (k-NN)
-  - Support Vector Machines (SVM)
+  - Support Vector Machines (SVM): [video](https://www.youtube.com/watch?v=_YPScrckx28)
 - Model evaluation techniques:
   - Accuracy, Precision, Recall, F1-Score
   - Confusion Matrix
@@ -29,6 +31,7 @@
 * [scikit-learn](https://scikit-learn.org/stable/): most popular python library for ML
 * **VIDEO:** Training AI to Play **Pokemon** with **Reinforcement Learning**: [video](https://www.youtube.com/watch?v=DcYLT37ImBY)
 * **VIDEO:** Predicting the 3D Structure of proteins with **AlphaFold2 *(in spanish)*:** [link](https://www.youtube.com/watch?v=Uz7ucmqjZ08)
+* **VIDEO:** Detecting Faces with Viola Jones Algorithm (how Snapchat and Instagram started applying face filters): [link](https://www.youtube.com/watch?v=uEJ71VlUmMQ)
 
 ## Deep Learning
 
@@ -44,7 +47,8 @@
 - Common Deep Learning Architectures:
   - Feedforward Neural Networks
   - Convolutional Neural Networks (CNNs)
-  - Recurrent Neural Networks (RNNs)
+  - Recurrent Neural Networks (RNNs): [video](https://www.youtube.com/watch?v=AsNTP8Kwu80)
+  - Generative Adversarial Networks (GANs): [video](https://www.youtube.com/watch?v=_qB4B6ttXk8), [documentation](https://www.geeksforgeeks.org/generative-adversarial-network-gan/)
 - Optimizers (SGD, Adam, RMSprop)
 - Overfitting and Regularization (Dropout, L2 Regularization)
 
@@ -71,24 +75,21 @@
 
 ![Exploring business potential of AI, LLM, ML & DL | Inwedo](https://inwedo.com/app/uploads/2023/08/llm-explained-1024x550.png)
 
-- Introduction to LLMs (GPT, BERT, T5)
-- Key Concepts:
-  - Transformers Architecture
-  - Self-Attention Mechanism
-  - Pre-training and Fine-tuning
-- Applications of LLMs:
-  - Text Generation
-  - Question Answering
-  - Summarization
-  - Conversational AI (chatbots)
-- LLM fine-tuning techniques (LoRA, QLoRA, Adapter Layers)
-
-**Transformers:** The origin of LLMs
+#### **Transformers:** The origin of LLMs
 
 * Original [paper](https://arxiv.org/abs/1706.03762), "Attention Is All You Need"
 * [Audio summary](https://illuminate.google.com/home?pli=1&play=SKUdNc_PPLL8) of "Attention Is All You Need"
 * Transformers explained: [video](https://www.youtube.com/watch?v=SZorAJ4I-sA)
 * Transformers python library: [here](https://pypi.org/project/transformers/)
+
+#### RAG (Retrieval Augmented Generation)
+
+* [Documentation](https://python.langchain.com/v0.2/docs/tutorials/rag/) from Langchain
+* [Video](https://www.youtube.com/watch?v=Q7CSm-Gl0RA) explanation
+
+#### Material:
+
+* **VIDEO:** Train AI with your FACE (in spanish): [link](https://www.youtube.com/watch?v=rgKBjRLvjLs)
 
 #### **Generative AI**
 
