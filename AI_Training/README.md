@@ -227,9 +227,12 @@ In this example, the model is set to respond with up to 100 tokens, using a temp
 
 These parameters offer flexibility to fine-tune the behavior of GPT-4 for different use cases, including chatbots, content generation, programming assistance, and more.
 
+#### Fine-tuning of LLMs: [link](../AI_Knowledge/LLMFineTuning.md)
+
 #### Material:
 
 * **VIDEO:** Train AI with your FACE (in spanish): [link](https://www.youtube.com/watch?v=rgKBjRLvjLs)
+* **NOTES**: From a good LinkedIn friend: [link](https://docs.google.com/document/d/1K7ahLiopilE0TxpkRcrrzgUPTcjZq0aY_5J797_0o98/edit)
 
 ## RAG (Retrieval Augmented Generation)
 
@@ -274,6 +277,8 @@ RAG is an effective approach when factual accuracy and up-to-date information ar
 
 * Article explanation: [link](https://medium.com/@sudhiryelikar/understanding-similarity-or-semantic-search-and-vector-databases-5f9a5ba98acb)
 * What is semantic search? [link](https://cohere.com/llmu/what-is-semantic-search)
+
+#### Advenced Techniques: [GraphRAG](../AI_Knowledge/GraphRAG.md)
 
 ## **Generative AI**
 
