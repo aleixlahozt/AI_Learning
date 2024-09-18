@@ -8,6 +8,8 @@
 4. **Natural Language Processing (NLP)**: NLP is the branch of AI that focuses on the interaction between computers and humans through natural language. It involves tasks like text classification, machine translation, and sentiment analysis.
 5. **Large Language Models (LLMs)**: LLMs are a class of models (like GPT-3 and GPT-4) that use deep learning to process and generate human language. They are trained on massive datasets and have revolutionized NLP by enabling applications like chatbots, summarization, and question answering.
 
+
+
 ## Machine Learning
 
 * [Course 1](https://www.coursera.org/learn/machine-learning/lecture/iYR2y/welcome-to-machine-learning): Introduction to Machine Learning, from Standford
@@ -66,6 +68,8 @@ In the context of **Machine Learning (ML)**, models are often categorized into *
 * **VIDEO:** Predicting the 3D Structure of proteins with **AlphaFold2 *(in spanish)*:** [link](https://www.youtube.com/watch?v=Uz7ucmqjZ08)
 * **VIDEO:** Detecting Faces with Viola Jones Algorithm (how Snapchat and Instagram started applying face filters): [link](https://www.youtube.com/watch?v=uEJ71VlUmMQ)
 
+
+
 ## Deep Learning
 
 * [Course 1](http://introtodeeplearning.com/): Introduction to Deep Learning, from MIT
@@ -99,6 +103,8 @@ In the context of **Machine Learning (ML)**, models are often categorized into *
 * Python **notebooks** covering most of the basics of DL: [here](DeepLearning)
 * **VIDEO:** What are deepfakes? [here](https://www.youtube.com/watch?v=pkF3m5wVUYI)
 
+
+
 ## NLP (Natural Language Processing)
 
 - Key NLP tasks:
@@ -120,11 +126,13 @@ In the context of **Machine Learning (ML)**, models are often categorized into *
 * **Entity recognition and relationship extraction:** These techniques work together to identify and categorize specific entities (like people or places) within the text and uncover their relationships.
 * **Word embeddings:** Finally, the model creates a numerical representation for each word (a vector), capturing its meaning and connections to other words. This allows the model to process the text and perform tasks like translation or summarization.
 
+
+
 ## LLMs (Large Language Models)
 
 ![Exploring business potential of AI, LLM, ML & DL | Inwedo](https://inwedo.com/app/uploads/2023/08/llm-explained-1024x550.png)
 
-#### **Transformers:** The origin of LLMs
+### **Transformers:** The origin of LLMs
 
 **Transformers** are the foundation of LLMs, which led to significant advancements in NLP by allowing models to understand the context of words based on their relationships with other words. The **Transformer architecture** revolutionized tasks like machine translation and text generation.
 
@@ -138,19 +146,19 @@ The **attention mechanism** was introduced in 2017 in the paper **Attention Is A
 * Transformers python library: [here](https://pypi.org/project/transformers/)
 * Python notebook: [here](DeepLearning/11_lab_transformer_todo.ipynb)
 
-#### Word and Text embeddings
+### Word and Text embeddings
 
 * **VIDEO:** Word Embeddings, word2vec: [link](https://www.youtube.com/watch?v=R3xHRSMCG5g)
 * **VIDEO:** Text embeddings [explanation](https://www.youtube.com/watch?v=OATCgQtNX2o)
 
-#### LLM Tokenizers
+### LLM Tokenizers
 
 LLMs process text by breaking it down into **tokens**. Tools like GPT-3 and ChatGPT rely heavily on tokenization to handle input efficiently. Understanding how **tokens** work is crucial for optimizing costs and performance in generative AI tasks.
 
 * What are ChatGPT tokens? [link](https://www.youtube.com/watch?v=YM3dbgKnQgA)
 * **VIDEO:** [Explanation](https://www.youtube.com/watch?v=hL4ZnAWSyuU)
 
-#### How to call API endpoints of LLMs like GPT-4?
+### How to call API endpoints of LLMs like GPT-4?
 
 When calling the API endpoint of a large language model like GPT-4 (via OpenAI’s API), you can typically pass several parameters to control the model's behavior and customize the response to suit your use case. Below are the common parameters you can pass:
 
@@ -233,6 +241,7 @@ These parameters offer flexibility to fine-tune the behavior of GPT-4 for differ
 
 * **VIDEO:** Train AI with your FACE (in spanish): [link](https://www.youtube.com/watch?v=rgKBjRLvjLs)
 * **NOTES**: From a good LinkedIn friend: [link](https://docs.google.com/document/d/1K7ahLiopilE0TxpkRcrrzgUPTcjZq0aY_5J797_0o98/edit)
+
 
 ## RAG (Retrieval Augmented Generation)
 
