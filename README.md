@@ -113,7 +113,3 @@ We welcome contributions! Whether it’s improving documentation, adding new tut
 3. Commit your changes (`git commit -m 'Add new feature'`)
 4. Push to the branch (`git push origin feature-branch`)
 5. Open a pull request
-
----
-
-## License
