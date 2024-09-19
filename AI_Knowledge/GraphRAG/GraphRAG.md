@@ -32,13 +32,40 @@ Graph RAG is especially useful in tasks like **sensemaking**, where global under
 
 This technique outperforms baseline RAG models on complex datasets, demonstrating its ability to capture and organize rich relational information across large corpora.
 
-### LINKS
+---
 
-* Graph RAG: **[https://www.youtube.com/watch?v=r09tJfON6kE](https://www.youtube.com/watch?v=r09tJfON6kE)**
-* GraphRAG: The Marriage of Knowledge Graphs and RAG: Emil Eifrem: [link](https://www.youtube.com/watch?v=knDDGYHnnSI)
+
+
+## To learn GraphRAG in detail
+
+1. First, watch this two videos to have a general understanding of what GraphRAG is:
+
+* [Graph RAG]([https://www.youtube.com/watch?v=r09tJfON6kE](https://www.youtube.com/watch?v=r09tJfON6kE)): LLM-Derived Knowledge Graphs for RAG
+* [GraphRAG](https://www.youtube.com/watch?v=knDDGYHnnSI): The Marriage of Knowledge Graphs and RAG: Emil Eifrem
+
+2. Read the original [paper](https://arxiv.org/pdf/2404.16130) of GraphRAG published by Microsoft researchers.
+
+3. Also, read this short article from Microsoft Research Blog
+
 * GraphRAG: Unlocking LLM discovery on narrative private data: [link](https://www.microsoft.com/en-us/research/blog/graphrag-unlocking-llm-discovery-on-narrative-private-data/)
-* (To READ) End-to-End implementation GraphRAG: [link](https://medium.com/@vinodkumargr/graphrag-graphs-retreival-augmented-generation-unlocking-llm-discovery-on-narrative-private-1bf977dadcdd)
-  * https://github.com/ApexIQ/End-to-End-Graphrag-implementation?source=post_page-----1bf977dadcdd--------------------------------
-  * https://pypi.org/project/graphrag/
-* (To READ) Avanced RAG techniques: [link](https://github.com/NirDiamant/RAG_Techniques)
-* (To WATCH) Local GraphRAG with Llama 3.1: [link](https://www.youtube.com/watch?v=nkbyD4joa0A&t=20s)
+
+**Also:**
+
+* **PYTHON PACKAGE / REPO:** Checkout [GraphRAG](https://pypi.org/project/graphrag/), a data pipeline and transformation suite that is designed to extract meaningful, structured data from unstructured text using the power of LLMs
+* **REPO:** Microsoft Azure GraphRAG [Accelerator](https://github.com/Azure-Samples/graphrag-accelerator)
+* **ARTICLE:**[ GraphRAG](https://medium.com/data-science-in-your-pocket/graphrag-using-langchain-31b1ef8328b9) using LangChain
+* **VIDEO:** Run local [GraphRAG](https://www.youtube.com/watch?v=nkbyD4joa0A) with LLaMa 3.1, Langchain and Neo4j
+
+Last:
+
+* **REPO:** Avanced RAG techniques: [link](https://github.com/NirDiamant/RAG_Techniques)
+
+## Hands-on with GraphRAG
+
+**Read this very detailed article from Medium, it includes an explanatory video**
+
+* End-to-End implementation GraphRAG: [link](https://medium.com/@vinodkumargr/graphrag-graphs-retreival-augmented-generation-unlocking-llm-discovery-on-narrative-private-1bf977dadcdd)
+
+From this article, we can access this github repository we can use to build an End-to-End GraphRAG implementation:
+
+* End-to-End GitHub [repo](https://github.com/ApexIQ/End-to-End-Graphrag-implementation?source=post_page-----1bf977dadcdd--------------------------------)
