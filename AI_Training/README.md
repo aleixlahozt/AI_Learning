@@ -287,7 +287,7 @@ RAG is an effective approach when factual accuracy and up-to-date information ar
 * Article explanation: [link](https://medium.com/@sudhiryelikar/understanding-similarity-or-semantic-search-and-vector-databases-5f9a5ba98acb)
 * What is semantic search? [link](https://cohere.com/llmu/what-is-semantic-search)
 
-#### Advenced Techniques: [GraphRAG](../AI_Knowledge/GraphRAG.md)
+#### Advanced Techniques: [GraphRAG](../AI_Knowledge/GraphRAG.md)
 
 ## **Generative AI**
 
