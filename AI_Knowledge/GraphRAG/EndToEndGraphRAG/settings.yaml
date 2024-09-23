@@ -2,16 +2,16 @@
 encoding_model: cl100k_base
 skip_workflows: []
 llm:
-  api_key: ${OPENAI_API_KEY}
-  type: azure_openai_chat # or azure_openai_chat
-  model: gpt-4o
+  api_key: ${AZURE_OPENAI_API_KEY}
+  type: azure_openai_chat # or openai_chat
+  model: GPT-4o
   model_supports_json: true # recommended if this is available for your model.
   # max_tokens: 4000
   # request_timeout: 180.0
-  api_base: ${API_BASE}
+  api_base: ${AZURE_OPENAI_ENDPOINT}
   api_version: 2024-02-15-preview
   # organization: <organization_id>
-  deployment_name: gpt4
+  deployment_name: ${AZURE_OPEANI_DEPLOYMENT_NAME}
   # tokens_per_minute: 150_000 # set a leaky bucket throttle
   # requests_per_minute: 10_000 # set a leaky bucket throttle
   # max_retries: 10
@@ -29,13 +29,13 @@ embeddings:
   ## parallelization: override the global parallelization settings for embeddings
   async_mode: threaded # or asyncio
   llm:
-    api_key: ${OPENAI_API_KEY}
-    type: azure_openai_embedding # or azure_openai_embedding
-    model: text-embedding-3-small
-    api_base: ${API_BASE}
-    #api_version: 2024-02-15-preview
+    api_key: ${AZURE_OPENAI_API_KEY}
+    type: azure_openai_embedding # or openai_embedding
+    model: text-embedding-ada-002 #text-embedding-3-small
+    api_base: ${AZURE_OPENAI_ENDPOINT}
+    api_version: 2024-02-15-preview
     # organization: <organization_id>
-    deployment_name: ${OPENAI_DEPLOYMENT_NAME}
+    deployment_name: ${AZURE_OPEANI_DEPLOYMENT_NAME_EMBEDDINGS}
     # tokens_per_minute: 150_000 # set a leaky bucket throttle
     # requests_per_minute: 10_000 # set a leaky bucket throttle
     # max_retries: 10
@@ -68,13 +68,13 @@ cache:
 
 storage:
   type: file # or blob
-  base_dir: "output/${timestamp}/artifacts"
+  base_dir: "output" #"output/${timestamp}/artifacts"
   # connection_string: <azure_blob_storage_connection_string>
   # container_name: <azure_blob_storage_container_name>
 
 reporting:
   type: file # or console, blob
-  base_dir: "output/${timestamp}/reports"
+  base_dir: "output" #"output/${timestamp}/reports"
   # connection_string: <azure_blob_storage_connection_string>
   # container_name: <azure_blob_storage_container_name>
 
