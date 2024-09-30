@@ -1,15 +1,15 @@
 # Fast API: [tutorial](https://fastapi.tiangolo.com/tutorial/first-steps/)
 
-* High-performance web framework for building APIs with Python
-* Extremely fast, faster than Django/Flask
+* **High-performance** web framework for building APIs with Python
+* Extremely **fast**, faster than Django/Flask
   * Flask runs on WSGI (not asynchronously)
-* Built-in Data Validation with Pydantic. Uses type hints to automatically validate data. Allows for custom types
-* Errors are in JSON
-* Built-in Authentication. Supports HTTP Basic OAuth2 tokens (JWT tokens) and Header API Keys
-* Automatically generates interactive API documentation using SwaggerUI and Redoc
+* Built-in **Data Validation** with Pydantic. Uses type hints to automatically validate data. Allows for custom types
+* **Errors** are in JSON
+* Built-in **Authentication**. Supports HTTP Basic OAuth2 tokens (JWT tokens) and Header API Keys
+* Automatically generates **interactive API documentation** using SwaggerUI and Redoc
   * /doc
   * /redoc
-* Automatically generates a JSON (schema) with the descriptions of all your API
+* Automatically generates a J**SON (schema)** with the descriptions of all your API
   * /openapi.json
 
 ### To run:
