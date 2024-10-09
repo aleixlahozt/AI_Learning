@@ -55,3 +55,8 @@ htmlcov/
 
 # ragatouille files
 .ragatouille/
+
+# .wav files
+*.wav
+
+*.tsv
