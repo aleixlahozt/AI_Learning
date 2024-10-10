@@ -8,11 +8,13 @@ from azure.mgmt.storage.models import StorageAccountCreateParameters, Sku, SkuNa
 from dotenv import load_dotenv
 load_dotenv()
 
+import configuration
+
 # Define variables
-subscription_id = os.getenv("AZURE_SUBSCRIPTION_ID")  # Your Azure subscription ID
-resource_group_name = "stt_evaluation"  # Replace with your desired resource group name
-location = "eastus"  # Azure region for the resource group and storage account
-storage_account_name = "sttdatasets001"  # Replace with your desired storage account name
+subscription_id = os.getenv("AZURE_SUBSCRIPTION_ID")
+resource_group_name = configuration.resource_group_name
+location = configuration.location
+storage_account_name = configuration.storage_account_name
 
 # Authenticate using DefaultAzureCredential (ensure 'az login' is done or set up Service Principal)
 credential = AzureCliCredential()
@@ -20,6 +22,7 @@ credential = AzureCliCredential()
 # Create clients
 resource_client = ResourceManagementClient(credential, subscription_id)
 storage_client = StorageManagementClient(credential, subscription_id)
+
 
 # Create or check if the resource group exists
 def create_resource_group():

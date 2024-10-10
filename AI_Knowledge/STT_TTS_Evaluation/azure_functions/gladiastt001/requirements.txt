@@ -1,0 +1,5 @@
+azure-functions
+azure-storage-blob
+azure-data-tables
+requests
+python-dotenv

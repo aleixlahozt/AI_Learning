@@ -1,4 +1,8 @@
 azure-mgmt-resource
 azure-mgmt-storage
+azure-mgmt-web
 azure-identity
 azure-storage-blob
+azure-data-tables
+azure-functions
+pandas
