@@ -44,6 +44,8 @@ Running this script will:
 3. Generate a **pandas DataFrame** from the .tsv uploaded file (for each specified language). This will be used to apply the proper formatting the .tsv columns and rows.
 4. Create an **Azure Table** with name `<table_name_english>` inside ` <storage_account_name>`. Use the df generated in 3) to **populate** the table.
 
+> Note: Steps 3. and 4. can also be run programatically with scripts 03_create_function_app.py and 04_deploy_function.py, but its advisable not to since it is more probable to run into errors. It is advisable to use Azure Functions VS Code extension instead
+
 ### 3. Create Azure Function App
 
 1. Install Azure Functions VSCode extension
@@ -58,7 +60,7 @@ Running this script will:
 
    1. Previously create and **empty folder** with a representative name (e.g. `azure_function_app`) and select it in this step
    2. Check that a series of files have been created in that folder
-2. Update **[function_app.py](function_app.py)** adding a new route for each STT client you want to be able to test. Use the **GladiaSTT** route as an example:
+2. Update **[function_app.py](azure_function_app/function_app.py)** adding a new route for each STT client you want to be able to test. Use the **GladiaSTT** route as an example:
 
    1. **Route Definition**: Defines the `gladiastt001` route for audio transcription requests.
    2. **Parameter Extraction and Validation**: Extracts and validates required parameters (`row_id`, `file_url`, and `partition_key`), returning a `400 Bad Request` if any are missing.
@@ -68,7 +70,8 @@ Running this script will:
    6. **Polling for Results**: Polls the Gladia API for the transcription result, retrying a set number of times.
    7. **Update Table Storage**: On successful transcription, updates the Azure Table Storage with the transcription text.
    8. **Error Handling**: Handles errors during API requests and logs relevant information.
-3. To deploy the function, right-click on the azure functions folder you created (e.g. `azure_function_app`) and select `Deploy to Function App...`
-4. After a sucessfull deployment, you can use tools like Postman to validate that the route is working properly:
+3. Update [requirements.txt](azure_function_app/requirements.txt) adding the necessary python packages to run the function code.
+4. To deploy the function, right-click on the azure functions folder you created (e.g. `azure_function_app`) and select `Deploy to Function App...`
+5. After a sucessfull deployment, you can use tools like Postman to validate that the route is working properly:
 
 ![1728576117421](image/README/1728576117421.png)
