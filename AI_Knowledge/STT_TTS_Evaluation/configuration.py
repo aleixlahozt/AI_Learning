@@ -18,7 +18,7 @@ table_name_english = "EnglishTranscriptions"  # Name of your table
 
 # AZURE FUNCTION
 app_service_plan_name = "sttevaluationplan"
-function_app_name = "sttevaluationfunctionapp001"
+function_app_name = "sttevaluation001"
 function_name_gladiastt = "gladiastt001"
 runtime = "python"  # Runtime can be 'python', 'node', etc.
 python_version = "Python|3.10"
