@@ -8,7 +8,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-GLADIA_API_KEY = os.getenv("GLADIA_API_KEY")
+GLADIA_API_KEY = "e0baafc8-2f92-4843-aa84-64412350d7bd" #os.getenv("GLADIA_API_KEY")
 
 ERROR_KEY = 'error'
 TYPE_KEY = 'type'
@@ -83,7 +83,8 @@ async def receive_transcription(socket):
                 break
             else:
                 if TYPE_KEY in utterance.keys():
-                    print(f"{utterance[TYPE_KEY]}: ({utterance[LANGUAGE_KEY]}) {utterance[TRANSCRIPTION_KEY]}")
+                    if "final" in utterance[TYPE_KEY]:
+                        print(f"{utterance[TYPE_KEY]}: ({utterance[LANGUAGE_KEY]}) {utterance[TRANSCRIPTION_KEY]}")
         else:
             print('Empty response, waiting for next utterance...')
 

@@ -115,7 +115,8 @@ def parse_arguments():
 if __name__ == "__main__":
     load_dotenv()
 
-    DEEPGRAM_API_KEY = os.getenv("DEEPGRAM_API_KEY")
+    DEEPGRAM_API_KEY = "4f81177f9f82a5fe564d866bac4195b0c7666b25"
+    #os.getenv("DEEPGRAM_API_KEY")
     if not DEEPGRAM_API_KEY:
         raise Exception("Please check that you've indicated DEEPGRAM_API_KEY in your .env file")
     else:

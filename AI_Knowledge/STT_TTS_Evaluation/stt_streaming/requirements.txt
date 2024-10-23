@@ -1,0 +1,4 @@
+num2words
+evaluate
+tqdm
+jiwer
