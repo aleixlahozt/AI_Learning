@@ -1,0 +1,44 @@
+[
+    {
+        "type": "function",
+        "function": {
+            "name": "provide_car_purchase_info",
+            "strict": true,
+            "description": "Gives detailed information and guidance for users interested in purchasing a new car. Use this tool when a user asks about buying a new car, including recommendations based on brand, budget, current time of year, and user's full name.",
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "full_name": {
+                        "type": "string",
+                        "description": "The user's full name, which is required for personalizing the information. This must be validated by spelling it back to the user and asking for confirmation before using it in the function call."
+                    },
+                    "brand": {
+                        "type": "string",
+                        "description": "The brand of the car the user is interested in. This is a required parameter."
+                    },
+                    "max_budget": {
+                        "type": [
+                            "number",
+                            "null"
+                        ],
+                        "description": "The maximum budget the user has for purchasing the car. This information is optional and must be asked to the user once, but proceed if the user doesn't want to provide it. Set it as is 100000 if no info from the conversation can be infered"
+                    },
+                    "current_time_of_year": {
+                        "type": [
+                            "string",
+                            "null"
+                        ],
+                        "description": "The time of the year when the user is inquiring about the car purchase, such as 'Spring', 'Summer', 'Fall', or 'Winter'. This should be inferred from the conversation context and not directly asked to the user. If not provided in the conversation, try to ask indirect questions to the user to get it. Set it as is 'Summer' if no info from the conversation can be infered"
+                    }
+                },
+                "additionalProperties": false,
+                "required": [
+                    "full_name",
+                    "brand",
+                    "max_budget",
+                    "current_time_of_year"
+                ]
+            }
+        }
+    }
+]
