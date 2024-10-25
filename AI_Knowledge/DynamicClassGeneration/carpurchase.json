@@ -1,0 +1,32 @@
+{
+    "$id": "carpurchase.json",
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "CarPurchase",
+    "type": "object",
+    "properties": {
+      "full_name": {
+        "type": "string",
+        "description": "The user's full name, which is required for personalizing the information. This must be validated by spelling it back to the user and asking for confirmation before using it in the function call."
+      },
+      "brand": {
+        "type": "string",
+        "description": "The brand of the car the user is interested in. This is a required parameter."
+      },
+      "max_budget": {
+        "type": ["number", "null"],
+        "description": "The maximum budget the user has for purchasing the car. This information is optional and must be asked to the user once, but proceed if the user doesn't want to provide it. Set it as 100000 if no info from the conversation can be inferred."
+      },
+      "current_time_of_year": {
+        "type": ["string", "null"],
+        "description": "The time of the year when the user is inquiring about the car purchase, such as 'Spring', 'Summer', 'Fall', or 'Winter'. This should be inferred from the conversation context and not directly asked to the user. If no info from the conversation can be inferred, set it as 'Summer'."
+      }
+    },
+    "required": [
+      "full_name",
+      "brand",
+      "max_budget",
+      "current_time_of_year"
+    ],
+    "additionalProperties": false
+  }
+  
